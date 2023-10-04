@@ -1,0 +1,6 @@
+C:\Users\Kanis\source\repos\ClassLibrary\ClassLibrary\bin\Debug\ClassLibrary.dll
+C:\Users\Kanis\source\repos\ClassLibrary\ClassLibrary\bin\Debug\ClassLibrary.pdb
+C:\Users\Kanis\source\repos\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.csproj.AssemblyReference.cache
+C:\Users\Kanis\source\repos\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Kanis\source\repos\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.dll
+C:\Users\Kanis\source\repos\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.pdb
