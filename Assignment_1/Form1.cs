@@ -13,7 +13,6 @@ namespace Assignment_1
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            
             string message = textBox1.Text;
             await Publisher.SendMessage(message);
 

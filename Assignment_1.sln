@@ -4,8 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment_1", "Assignment_1\Assignment_1.csproj", "{43674252-CC5B-4E65-B9B1-923906E205CE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{64E728A7-0F17-430D-9166-65A98D25355D} = {64E728A7-0F17-430D-9166-65A98D25355D}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "..\..\..\source\repos\Assignment_1\Assignment_1\ClassLibrary\ClassLibrary.csproj", "{64E728A7-0F17-430D-9166-65A98D25355D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{64E728A7-0F17-430D-9166-65A98D25355D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

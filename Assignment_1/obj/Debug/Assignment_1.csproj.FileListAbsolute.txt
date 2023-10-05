@@ -21,3 +21,16 @@ C:\Users\Kanis\Downloads\Assignment_1\Assignment_1\Assignment_1\bin\Debug\Assign
 C:\Users\Kanis\Downloads\Assignment_1\Assignment_1\Assignment_1\bin\Debug\ClassLibrary.dll
 C:\Users\Kanis\Downloads\Assignment_1\Assignment_1\Assignment_1\bin\Debug\ClassLibrary.pdb
 C:\Users\Kanis\Downloads\Assignment_1\Assignment_1\Assignment_1\obj\Debug\Assignment_1.csproj.CopyComplete
+C:\Users\domin\Desktop\Projects\P2PChat\Assignment_1\bin\Debug\Assignment_1.exe.config
+C:\Users\domin\Desktop\Projects\P2PChat\Assignment_1\bin\Debug\Assignment_1.exe
+C:\Users\domin\Desktop\Projects\P2PChat\Assignment_1\bin\Debug\Assignment_1.pdb
+C:\Users\domin\Desktop\Projects\P2PChat\Assignment_1\bin\Debug\ClassLibrary.pdb
+C:\Users\domin\Desktop\Projects\P2PChat\Assignment_1\obj\Debug\Assignment_1.csproj.AssemblyReference.cache
+C:\Users\domin\Desktop\Projects\P2PChat\Assignment_1\obj\Debug\Assignment_1.Form1.resources
+C:\Users\domin\Desktop\Projects\P2PChat\Assignment_1\obj\Debug\Assignment_1.Properties.Resources.resources
+C:\Users\domin\Desktop\Projects\P2PChat\Assignment_1\obj\Debug\Assignment_1.csproj.GenerateResource.cache
+C:\Users\domin\Desktop\Projects\P2PChat\Assignment_1\obj\Debug\Assignment_1.csproj.CoreCompileInputs.cache
+C:\Users\domin\Desktop\Projects\P2PChat\Assignment_1\obj\Debug\Assignment_1.csproj.CopyComplete
+C:\Users\domin\Desktop\Projects\P2PChat\Assignment_1\obj\Debug\Assignment_1.exe
+C:\Users\domin\Desktop\Projects\P2PChat\Assignment_1\obj\Debug\Assignment_1.pdb
+C:\Users\domin\Desktop\Projects\P2PChat\Assignment_1\bin\Debug\ClassLibrary.dll

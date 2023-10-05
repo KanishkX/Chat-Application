@@ -4,3 +4,9 @@ C:\Users\Kanis\source\repos\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.csp
 C:\Users\Kanis\source\repos\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.csproj.CoreCompileInputs.cache
 C:\Users\Kanis\source\repos\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.dll
 C:\Users\Kanis\source\repos\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.pdb
+C:\Users\domin\Desktop\Projects\P2PChat\ClassLibrary\bin\Debug\ClassLibrary.dll
+C:\Users\domin\Desktop\Projects\P2PChat\ClassLibrary\bin\Debug\ClassLibrary.pdb
+C:\Users\domin\Desktop\Projects\P2PChat\ClassLibrary\obj\Debug\ClassLibrary.csproj.AssemblyReference.cache
+C:\Users\domin\Desktop\Projects\P2PChat\ClassLibrary\obj\Debug\ClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\domin\Desktop\Projects\P2PChat\ClassLibrary\obj\Debug\ClassLibrary.dll
+C:\Users\domin\Desktop\Projects\P2PChat\ClassLibrary\obj\Debug\ClassLibrary.pdb
