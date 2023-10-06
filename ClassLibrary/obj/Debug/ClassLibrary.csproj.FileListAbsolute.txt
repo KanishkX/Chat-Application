@@ -10,3 +10,9 @@ C:\Users\domin\Desktop\Projects\P2PChat\ClassLibrary\obj\Debug\ClassLibrary.cspr
 C:\Users\domin\Desktop\Projects\P2PChat\ClassLibrary\obj\Debug\ClassLibrary.csproj.CoreCompileInputs.cache
 C:\Users\domin\Desktop\Projects\P2PChat\ClassLibrary\obj\Debug\ClassLibrary.dll
 C:\Users\domin\Desktop\Projects\P2PChat\ClassLibrary\obj\Debug\ClassLibrary.pdb
+C:\Users\W0474142\Source\Repos\ChatApp\ClassLibrary\bin\Debug\ClassLibrary.dll
+C:\Users\W0474142\Source\Repos\ChatApp\ClassLibrary\bin\Debug\ClassLibrary.pdb
+C:\Users\W0474142\Source\Repos\ChatApp\ClassLibrary\obj\Debug\ClassLibrary.csproj.AssemblyReference.cache
+C:\Users\W0474142\Source\Repos\ChatApp\ClassLibrary\obj\Debug\ClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\W0474142\Source\Repos\ChatApp\ClassLibrary\obj\Debug\ClassLibrary.dll
+C:\Users\W0474142\Source\Repos\ChatApp\ClassLibrary\obj\Debug\ClassLibrary.pdb

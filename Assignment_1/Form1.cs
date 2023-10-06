@@ -24,7 +24,8 @@ namespace Assignment_1
 
         private void correctToolStripMenuItem_Click(object sender, EventArgs e)
         {
-             Publisher = new Client();
+            // TODO: Use paramaters defined in new revision of Client constructor
+            Publisher = new Client("localhost");
             Publisher.ReceiveMessagesAsync();
             Publisher.RaiseCustomEvent += HandleMessageReceived;
         }
