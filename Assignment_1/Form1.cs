@@ -26,14 +26,15 @@ namespace Assignment_1
         {
             // TODO: Use paramaters defined in new revision of Client constructor
             Publisher = new Client("localhost");
-            Publisher.ReceiveMessagesAsync();
-            Publisher.RaiseCustomEvent += HandleMessageReceived;
+            Publisher.MessageReceived += HandleMessageReceived;
         }
-        private void HandleMessageReceived(object sender, MessageEventArgs e)
+        public void HandleMessageReceived(string message)
         {
-            string receivedMessage = e.Message;
             // Do something with the received message
-            listBox1.Items.Add(receivedMessage);
+            this.Invoke(new MethodInvoker(delegate ()
+            {
+                listBox1.Items.Add(message);
+                }));
         }
 
     }

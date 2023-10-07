@@ -22,9 +22,8 @@ namespace ClassLibrary
     public class Client
     {
 
-        public delegate string MyDelegate(string message);
-        public event MyDelegate MyEvent;
-        public event EventHandler<MessageEventArgs> RaiseCustomEvent;
+        public delegate void MessageReceivedEventHandler(string message);
+        public event MessageReceivedEventHandler MessageReceived;
         private TcpClient client = new TcpClient();
         private TcpListener server;
         private NetworkStream stream;
@@ -34,7 +33,6 @@ namespace ClassLibrary
         {
             try
             {
-
                 client.Connect(IPAdress, port);
                 stream = client.GetStream();
 
@@ -42,38 +40,39 @@ namespace ClassLibrary
             }
             catch (Exception e)
             {
-                IPAddress localAddr = IPAddress.Parse("127.0.0.1");
-                server = new TcpListener(localAddr, port);
-                server.Start();
-                Task.Run(() => StartServerAsync());
-                string msg = e.Message;
+                //IPAddress localAddr = IPAddress.Parse("127.0.0.1");
+                //server = new TcpListener(localAddr, port);
+                //server.Start();
+                //Task.Run(() => StartServerAsync());
+                //string msg = e.Message;
+                Console.WriteLine(e.Message);
             }
         }
 
-        public async Task StartServerAsync()
-        {
-            while (true)
-            {
-                client = await server.AcceptTcpClientAsync();
-                stream = client.GetStream();
-                byte[] buffer = new byte[1024];
-                int bytesRead;
+        //public async Task StartServerAsync()
+        //{
+        //    while (true)
+        //    {
+        //        client = await server.AcceptTcpClientAsync();
+        //        stream = client.GetStream();
+        //        byte[] buffer = new byte[1024];
+        //        int bytesRead;
 
-                try
-                {
-                    while ((bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length)) > 0)
-                    {
-                        string message = Encoding.ASCII.GetString(buffer, 0, bytesRead);
-                        //AppendMessage($"Received: {message}");
-                        MyEvent.Invoke($"Received: {message}");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MyEvent.Invoke("Error");
-                }
-            }
-        }
+        //        try
+        //        {
+        //            while ((bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length)) > 0)
+        //            {
+        //                string message = Encoding.ASCII.GetString(buffer, 0, bytesRead);
+        //                //AppendMessage($"Received: {message}");
+        //                MyEvent.Invoke($"Received: {message}");
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MyEvent.Invoke("Error");
+        //        }
+        //    }
+        //}
 
         public async Task ReceiveMessagesAsync()
         {
@@ -82,16 +81,17 @@ namespace ClassLibrary
 
             try
             {
+                await SendMessage("Connected");
                 while ((bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length)) > 0)
                 {
                     string message = Encoding.ASCII.GetString(buffer, 0, bytesRead);
-                    OnMessageReceived(new MessageEventArgs($"Message Recieved:{message}"));
+                    OnMessageReceived(message);
 
                 }
             }
             catch (Exception e)
             {
-                OnMessageReceived(new MessageEventArgs("Exception"));
+                Console.WriteLine(e.Message);
             }
         }
 
@@ -103,19 +103,13 @@ namespace ClassLibrary
                 byte[] buffer = Encoding.ASCII.GetBytes(message);
                 await stream.WriteAsync(buffer, 0, buffer.Length);
             }
-            //else
-            //{
-            //    OnMessageReceived("Empty");
-            //}
         }
 
-        protected virtual void OnMessageReceived(MessageEventArgs e)
+        protected virtual void OnMessageReceived(string msg)
         {
-            EventHandler<MessageEventArgs> raiseEvent = RaiseCustomEvent;
-            if (raiseEvent != null)
+            if (MessageReceived != null)
             {
-
-                raiseEvent(this, e);
+                MessageReceived(msg);
             }
         }
     }
