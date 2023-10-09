@@ -14,6 +14,7 @@ namespace Assignment_1
         private async void button1_Click(object sender, EventArgs e)
         {
             string message = textBox1.Text;
+            listBox1.Items.Add($"S: {message}");
             await Publisher.SendMessage(message);
 
         }
@@ -25,7 +26,7 @@ namespace Assignment_1
         private void correctToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // TODO: Use paramaters defined in new revision of Client constructor
-            Publisher = new Client("localhost");
+            Publisher = new Client("127.0.0.1");
             Publisher.MessageReceived += HandleMessageReceived;
         }
         public void HandleMessageReceived(string message)
@@ -37,6 +38,10 @@ namespace Assignment_1
                 }));
         }
 
+        private void disconnectToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Dispose();
+        }
     }
 }
 

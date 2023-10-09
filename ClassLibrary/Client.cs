@@ -30,49 +30,48 @@ namespace ClassLibrary
         private readonly int port = 8888;
 
         public Client(string IPAdress)
-        {
+        {   
+
             try
-            {
+            {   
                 client.Connect(IPAdress, port);
                 stream = client.GetStream();
 
                 Task.Run(() => ReceiveMessagesAsync());
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                //IPAddress localAddr = IPAddress.Parse("127.0.0.1");
-                //server = new TcpListener(localAddr, port);
-                //server.Start();
-                //Task.Run(() => StartServerAsync());
-                //string msg = e.Message;
-                Console.WriteLine(e.Message);
+                IPAddress localAddr = IPAddress.Parse(IPAdress);
+                server = new TcpListener(localAddr, port);
+                server.Start();
+                Task.Run(() => StartServerAsync());
             }
+
         }
 
-        //public async Task StartServerAsync()
-        //{
-        //    while (true)
-        //    {
-        //        client = await server.AcceptTcpClientAsync();
-        //        stream = client.GetStream();
-        //        byte[] buffer = new byte[1024];
-        //        int bytesRead;
+        public async Task StartServerAsync()
+        {
+            while (true)
+            {
+                client = await server.AcceptTcpClientAsync();
+                stream = client.GetStream();
+                byte[] buffer = new byte[1024];
+                int bytesRead;
 
-        //        try
-        //        {
-        //            while ((bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length)) > 0)
-        //            {
-        //                string message = Encoding.ASCII.GetString(buffer, 0, bytesRead);
-        //                //AppendMessage($"Received: {message}");
-        //                MyEvent.Invoke($"Received: {message}");
-        //            }
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MyEvent.Invoke("Error");
-        //        }
-        //    }
-        //}
+                try
+                {
+                    while ((bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length)) > 0)
+                    {
+                        string message = Encoding.ASCII.GetString(buffer, 0, bytesRead);
+                        OnMessageReceived($"Received: {message}");
+                    }
+                }
+                catch (Exception)
+                {
+                    OnMessageReceived("Error");
+                }
+            }
+        }
 
         public async Task ReceiveMessagesAsync()
         {
@@ -85,7 +84,7 @@ namespace ClassLibrary
                 while ((bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length)) > 0)
                 {
                     string message = Encoding.ASCII.GetString(buffer, 0, bytesRead);
-                    OnMessageReceived(message);
+                    OnMessageReceived($"R: {message}");
 
                 }
             }
@@ -111,6 +110,15 @@ namespace ClassLibrary
             {
                 MessageReceived(msg);
             }
+            //MessageReceived.Invoke(msg);
+        }
+
+        public void Dispose()
+        {
+            if (client != null) { client.Close(); }
+            if (server != null) { server.Stop(); }
+            if (stream != null) { stream.Close(); }
+                
         }
     }
 }
