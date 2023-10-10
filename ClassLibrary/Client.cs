@@ -40,8 +40,8 @@ namespace ClassLibrary
             }
             catch (Exception)
             {
-                IPAddress localAddr = IPAddress.Parse(IPAdress);
-                server = new TcpListener(localAddr, port);
+                IPEndPoint localIPAddress = new IPEndPoint(IPAddress.Parse(IPAdress), port);
+                server = new TcpListener(localIPAddress);
                 server.Start();
                 Task.Run(() => StartServerAsync());
             }
