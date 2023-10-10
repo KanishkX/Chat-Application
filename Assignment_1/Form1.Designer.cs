@@ -45,14 +45,14 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gameToolStripMenuItem,
             this.networkToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 24);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1142, 33);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(761, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -61,13 +61,13 @@
             this.gameToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.gameToolStripMenuItem.Name = "gameToolStripMenuItem";
-            this.gameToolStripMenuItem.Size = new System.Drawing.Size(74, 29);
+            this.gameToolStripMenuItem.Size = new System.Drawing.Size(50, 22);
             this.gameToolStripMenuItem.Text = "Game";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -77,20 +77,20 @@
             this.correctToolStripMenuItem,
             this.disconnectToolStripMenuItem});
             this.networkToolStripMenuItem.Name = "networkToolStripMenuItem";
-            this.networkToolStripMenuItem.Size = new System.Drawing.Size(95, 29);
+            this.networkToolStripMenuItem.Size = new System.Drawing.Size(64, 22);
             this.networkToolStripMenuItem.Text = "Network";
             // 
             // correctToolStripMenuItem
             // 
             this.correctToolStripMenuItem.Name = "correctToolStripMenuItem";
-            this.correctToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.correctToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.correctToolStripMenuItem.Text = "Connect";
             this.correctToolStripMenuItem.Click += new System.EventHandler(this.correctToolStripMenuItem_Click);
             // 
             // disconnectToolStripMenuItem
             // 
             this.disconnectToolStripMenuItem.Name = "disconnectToolStripMenuItem";
-            this.disconnectToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.disconnectToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.disconnectToolStripMenuItem.Text = "Disconnect";
             this.disconnectToolStripMenuItem.Click += new System.EventHandler(this.disconnectToolStripMenuItem_Click_1);
             // 
@@ -102,24 +102,26 @@
             // 
             // listBox1
             // 
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(82, 360);
+            this.listBox1.Location = new System.Drawing.Point(53, 81);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(925, 304);
+            this.listBox1.Size = new System.Drawing.Size(618, 199);
             this.listBox1.TabIndex = 7;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(129, 318);
+            this.textBox1.Location = new System.Drawing.Point(53, 386);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(712, 26);
+            this.textBox1.Size = new System.Drawing.Size(522, 20);
             this.textBox1.TabIndex = 6;
             // 
             // button
             // 
-            this.button.Location = new System.Drawing.Point(890, 318);
+            this.button.Location = new System.Drawing.Point(591, 383);
+            this.button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button.Name = "button";
-            this.button.Size = new System.Drawing.Size(120, 35);
+            this.button.Size = new System.Drawing.Size(80, 23);
             this.button.TabIndex = 5;
             this.button.Text = "Send";
             this.button.UseVisualStyleBackColor = true;
@@ -127,26 +129,25 @@
             // 
             // menuStrip2
             // 
-            this.menuStrip2.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip2.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1142, 24);
+            this.menuStrip2.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip2.Size = new System.Drawing.Size(761, 24);
             this.menuStrip2.TabIndex = 6;
             this.menuStrip2.Text = "menuStrip2";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1142, 698);
+            this.ClientSize = new System.Drawing.Size(761, 454);
             this.Controls.Add(this.button);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menuStrip2);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
