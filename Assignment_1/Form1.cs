@@ -18,11 +18,8 @@ namespace Assignment_1
             await Publisher.SendMessage(message);
 
         }
-        private void disconnectToolStripMenuItem_Click(object sender, EventArgs e)
-        {   
-            this.Close();
-        }
 
+        //Connect to server/client
         private void correctToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // TODO: Use paramaters defined in new revision of Client constructor
@@ -38,9 +35,16 @@ namespace Assignment_1
                 }));
         }
 
+        //Disconnect the server
         private void disconnectToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            Dispose();
+            Publisher.Close();
+        }
+
+        //Close the form
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

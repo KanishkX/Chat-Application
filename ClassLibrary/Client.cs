@@ -63,7 +63,7 @@ namespace ClassLibrary
                     while ((bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length)) > 0)
                     {
                         string message = Encoding.ASCII.GetString(buffer, 0, bytesRead);
-                        OnMessageReceived($"Received: {message}");
+                        OnMessageReceived($"R: {message}");
                     }
                 }
                 catch (Exception)
@@ -113,7 +113,7 @@ namespace ClassLibrary
             //MessageReceived.Invoke(msg);
         }
 
-        public void Dispose()
+        public void Close()
         {
             if (client != null) { client.Close(); }
             if (server != null) { server.Stop(); }
