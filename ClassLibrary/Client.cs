@@ -36,7 +36,6 @@ namespace ClassLibrary
             {   
                 client.Connect(IPAdress, port);
                 stream = client.GetStream();
-
                 Task.Run(() => ReceiveMessagesAsync());
             }
             catch (Exception)
@@ -80,7 +79,8 @@ namespace ClassLibrary
 
             try
             {
-                await SendMessage("Connected");
+                await SendMessage("Server Connected to Client");
+                clientConnected();
                 while ((bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length)) > 0)
                 {
                     string message = Encoding.ASCII.GetString(buffer, 0, bytesRead);
@@ -119,6 +119,11 @@ namespace ClassLibrary
             if (server != null) { server.Stop(); }
             if (stream != null) { stream.Close(); }
                 
+        }
+        public void clientConnected() {
+            if (client.Connected ) {
+                OnMessageReceived("Client is Connect to Server");
+            }
         }
     }
 }

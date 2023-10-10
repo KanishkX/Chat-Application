@@ -9,6 +9,7 @@ namespace Assignment_1
         public Form1()
         {
             InitializeComponent();
+           
         }
 
         private async void button1_Click(object sender, EventArgs e)
@@ -25,6 +26,7 @@ namespace Assignment_1
             // TODO: Use paramaters defined in new revision of Client constructor
             Publisher = new Client("127.0.0.1");
             Publisher.MessageReceived += HandleMessageReceived;
+
         }
         public void HandleMessageReceived(string message)
         {
@@ -32,7 +34,7 @@ namespace Assignment_1
             this.Invoke(new MethodInvoker(delegate ()
             {
                 listBox1.Items.Add(message);
-                }));
+            }));
         }
 
         //Disconnect the server
