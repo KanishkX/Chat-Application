@@ -24,28 +24,33 @@ namespace ClassLibrary
 
         public delegate void MessageReceivedEventHandler(string message);
         public event MessageReceivedEventHandler MessageReceived;
-        private TcpClient client = new TcpClient();
-        private TcpListener server;
+        private TcpClient client = null;
+        private readonly TcpListener server = null;
         private NetworkStream stream;
         private readonly int port = 8888;
 
         public Client(string IPAdress)
         {   
-
+            // Acting as a Client
             try
             {   
-                client.Connect(IPAdress, port);
+                client = new TcpClient(IPAdress, port);
                 stream = client.GetStream();
                 Task.Run(() => ReceiveMessagesAsync());
             }
             catch (Exception)
             {
-                IPEndPoint localIPAddress = new IPEndPoint(IPAddress.Parse(IPAdress), port);
-                server = new TcpListener(localIPAddress);
-                server.Start();
-                Task.Run(() => StartServerAsync());
-            }
 
+            }
+        }
+
+        public Client()
+        {
+            // Acting as a server
+            IPEndPoint localIPAddress = new IPEndPoint(IPAddress.Any, port);
+            server = new TcpListener(localIPAddress);
+            server.Start();
+            Task.Run(() => StartServerAsync());
         }
 
         public async Task StartServerAsync()
