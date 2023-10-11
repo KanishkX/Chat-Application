@@ -91,7 +91,6 @@
             this.correctToolStripMenuItem.Name = "correctToolStripMenuItem";
             this.correctToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.correctToolStripMenuItem.Text = "Connect";
-            this.correctToolStripMenuItem.Click += new System.EventHandler(this.correctToolStripMenuItem_Click);
             // 
             // disconnectToolStripMenuItem
             // 

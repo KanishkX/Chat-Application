@@ -20,16 +20,6 @@ namespace Assignment_1
             await Publisher.SendMessage(message);
 
         }
-
-        //Connect to server/client
-        private void correctToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // TODO: Determine whether is gonna connect as a server or client | Client(str IpAddress) for Client
-            Publisher = new Client(); // Server for now
-            Publisher.MessageReceived += HandleMessageReceived;
-            listBox1.Items.Add("Waiting for connection...");
-
-        }
         public void HandleMessageReceived(string message)
         {
             // Do something with the received message
@@ -61,6 +51,7 @@ namespace Assignment_1
         private void serverToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Publisher = new Client();
+            listBox1.Items.Add("Waiting for connection...");
             Publisher.MessageReceived += HandleMessageReceived;
         }
 

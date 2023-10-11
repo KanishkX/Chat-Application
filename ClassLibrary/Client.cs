@@ -38,9 +38,9 @@ namespace ClassLibrary
                 stream = client.GetStream();
                 Task.Run(() => ReceiveMessagesAsync());
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
+                Console.WriteLine(e.ToString());
             }
         }
 
@@ -115,7 +115,6 @@ namespace ClassLibrary
             {
                 MessageReceived(msg);
             }
-            //MessageReceived.Invoke(msg);
         }
 
         public void Close()
